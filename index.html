@@ -587,11 +587,20 @@
       justify-content: flex-end;
     }
 
+    /* Bottom divider band */
+    .page-divider {
+      margin-top: 40px;
+      padding: 36px 0 26px;
+      background:
+        linear-gradient(to bottom, rgba(21, 12, 32, 0.9), rgba(5, 3, 12, 0.98)),
+        rgba(5, 3, 12, 0.98);
+      border-top: 1px solid rgba(240, 0, 129, 0.35);
+    }
+
     .footer {
       font-size: 13px;
       color: var(--muted);
       text-align: center;
-      margin-top: 30px;
     }
 
     .footer a {
@@ -602,7 +611,7 @@
       text-decoration: underline;
     }
 
-    /* Scale up everything on big screens so it's actually comfy on huge monitors */
+    /* Scale up everything on big screens so it's comfy on huge monitors */
     @media (min-width: 1500px) {
       .page {
         max-width: 1400px;
@@ -835,12 +844,14 @@
       </div>
     </section>
 
-    <!-- FOOTER -->
-    <footer class="footer">
-      CandyHub · Candy Black Studios · Come for the mods, stay for the vibes.
-      <br />
-      Site powered by GitHub Pages · Mods &amp; CC always credited to original creators.
-    </footer>
+    <!-- DIVIDER + FOOTER -->
+    <div class="page-divider">
+      <footer class="footer">
+        CandyHub · Candy Black Studios · Come for the mods, stay for the vibes.
+        <br />
+        Site powered by GitHub Pages · Mods &amp; CC always credited to original creators.
+      </footer>
+    </div>
   </div>
 </body>
 </html>
