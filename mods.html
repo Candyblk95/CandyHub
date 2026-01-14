@@ -1,0 +1,1089 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>CandyHub – Sims 4 Mods & CC Library</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta
+    name="description"
+    content="CandyHub Sims 4 Mods & CC library – all the mods, CC, presets, reshades and gameplay tweaks I use, with credits and links to original creators."
+  />
+
+  <!-- Google Font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+    rel="stylesheet"
+  />
+
+  <style>
+    :root {
+      --bg: #050309;
+      --bg-alt: #0b0613;
+      --card: #120c1f;
+      --accent: #F00081;
+      --accent-soft: rgba(240, 0, 129, 0.15);
+      --text: #f8f5ff;
+      --muted: #a59ac3;
+      --border: #2a1f3b;
+      --radius-lg: 18px;
+      --radius-xl: 26px;
+      --shadow-soft: 0 18px 50px rgba(0, 0, 0, 0.8);
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: "Poppins", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background:
+        radial-gradient(circle at top left, #2b1641 0, transparent 55%),
+        radial-gradient(circle at top right, #2b1641 0, transparent 55%),
+        #050309;
+      background-repeat: no-repeat;
+      color: var(--text);
+      min-height: 100vh;
+      padding: 40px 32px 60px;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .page {
+      max-width: 1400px;
+      margin: 0 auto;
+    }
+
+    /* NAV */
+    header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      margin-bottom: 30px;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .brand-avatar {
+      width: 48px;
+      height: 48px;
+      border-radius: 999px;
+      background:
+        radial-gradient(circle at top, #ff7bd5 0, #F00081 40%, #2b1641 100%);
+      box-shadow: 0 0 28px rgba(240, 0, 129, 0.7);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 700;
+      font-size: 24px;
+    }
+
+    .brand-text h1 {
+      font-size: 22px;
+      font-weight: 600;
+      letter-spacing: 0.04em;
+    }
+
+    .brand-text span {
+      font-size: 12px;
+      color: var(--muted);
+    }
+
+    nav {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+
+    .nav-link {
+      font-size: 14px;
+      padding: 7px 13px;
+      border-radius: 999px;
+      border: 1px solid transparent;
+      background: transparent;
+      color: var(--muted);
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      cursor: pointer;
+      transition: all 0.18s ease;
+    }
+
+    .nav-link span {
+      font-size: 16px;
+    }
+
+    .nav-link:hover {
+      color: var(--text);
+      border-color: rgba(240, 0, 129, 0.4);
+      background: rgba(10, 5, 18, 0.9);
+    }
+
+    .nav-link.active {
+      color: var(--text);
+      border-color: rgba(240, 0, 129, 0.9);
+      background: var(--accent-soft);
+      box-shadow: 0 0 0 1px rgba(240, 0, 129, 0.4);
+    }
+
+    @media (max-width: 720px) {
+      header {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+      nav {
+        width: 100%;
+      }
+    }
+
+    /* HERO */
+    .hero {
+      border-radius: var(--radius-xl);
+      border: 1px solid rgba(240, 0, 129, 0.35);
+      background:
+        radial-gradient(circle at top left, rgba(240, 0, 129, 0.2), transparent 52%),
+        radial-gradient(circle at bottom right, rgba(93, 63, 211, 0.3), transparent 60%),
+        rgba(5, 3, 12, 0.92);
+      box-shadow: var(--shadow-soft);
+      padding: 26px 24px 22px;
+      display: grid;
+      grid-template-columns: minmax(0, 3fr) minmax(0, 2.1fr);
+      gap: 22px;
+      margin-bottom: 28px;
+    }
+
+    @media (max-width: 840px) {
+      .hero {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .hero-kicker {
+      font-size: 12px;
+      color: var(--muted);
+      margin-bottom: 8px;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 4px 11px;
+      border-radius: 999px;
+      border: 1px solid rgba(240, 0, 129, 0.45);
+      background: rgba(8, 3, 18, 0.85);
+    }
+
+    .hero-kicker span {
+      font-size: 8px;
+      width: 8px;
+      height: 8px;
+      border-radius: 999px;
+      background: #42ffb7;
+      box-shadow: 0 0 11px rgba(66, 255, 183, 0.9);
+    }
+
+    .hero-title {
+      font-size: 32px;
+      line-height: 1.15;
+      font-weight: 600;
+      margin-bottom: 10px;
+    }
+
+    .hero-title span {
+      color: var(--accent);
+    }
+
+    .hero-tagline {
+      font-size: 14px;
+      color: var(--muted);
+      margin-bottom: 14px;
+    }
+
+    .hero-tagline strong {
+      color: #ffffff;
+      font-weight: 500;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-bottom: 12px;
+    }
+
+    .btn-primary {
+      border-radius: 999px;
+      padding: 8px 16px;
+      border: none;
+      background: linear-gradient(135deg, #ff7bd5, var(--accent));
+      color: #050309;
+      font-size: 14px;
+      font-weight: 600;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      cursor: pointer;
+      box-shadow: 0 0 22px rgba(240, 0, 129, 0.8);
+      text-decoration: none;
+      white-space: nowrap;
+    }
+
+    .btn-primary span {
+      font-size: 18px;
+    }
+
+    .btn-ghost {
+      border-radius: 999px;
+      padding: 7px 14px;
+      font-size: 13px;
+      border: 1px solid rgba(240, 0, 129, 0.6);
+      background: rgba(6, 3, 12, 0.7);
+      color: var(--text);
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      cursor: pointer;
+      text-decoration: none;
+    }
+
+    .hero-note {
+      font-size: 13px;
+      color: var(--muted);
+    }
+
+    .hero-note strong {
+      color: #fff;
+      font-weight: 500;
+    }
+
+    .hero-right {
+      border-radius: var(--radius-lg);
+      background: radial-gradient(circle at top, rgba(240, 0, 129, 0.16), transparent 55%), rgba(7, 4, 16, 0.96);
+      border: 1px solid rgba(240, 0, 129, 0.35);
+      padding: 15px 14px 13px;
+    }
+
+    .hero-right-title {
+      font-size: 13px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 8px;
+      margin-bottom: 10px;
+    }
+
+    .hero-right-title span {
+      font-size: 12px;
+      color: var(--muted);
+    }
+
+    .pill-soft {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 4px 10px;
+      border-radius: 999px;
+      border: 1px solid rgba(255, 255, 255, 0.06);
+      background: rgba(9, 5, 18, 0.95);
+      font-size: 12px;
+      color: var(--muted);
+    }
+
+    .pill-soft span {
+      font-size: 16px;
+    }
+
+    .meta-list {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 8px;
+      font-size: 12px;
+      margin-top: 10px;
+      margin-bottom: 10px;
+    }
+
+    .meta-item-label {
+      color: var(--muted);
+      font-size: 11px;
+    }
+
+    .meta-item-value {
+      font-size: 13px;
+      font-weight: 500;
+    }
+
+    .hero-right-note {
+      font-size: 12px;
+      color: var(--muted);
+      margin-top: 6px;
+    }
+
+    /* Sections */
+    .section {
+      margin-bottom: 28px;
+    }
+
+    .section-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      gap: 12px;
+      margin-bottom: 14px;
+    }
+
+    .section-title {
+      font-size: 19px;
+      font-weight: 600;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .section-title span {
+      font-size: 20px;
+    }
+
+    .section-subtitle {
+      font-size: 13px;
+      color: var(--muted);
+    }
+
+    .card {
+      border-radius: var(--radius-lg);
+      background: radial-gradient(circle at top, rgba(240, 0, 129, 0.12), transparent 55%), var(--card);
+      border: 1px solid rgba(22, 17, 35, 0.9);
+      box-shadow: 0 12px 26px rgba(0, 0, 0, 0.8);
+      padding: 13px 14px 12px;
+      font-size: 14px;
+      display: flex;
+      flex-direction: column;
+      gap: 7px;
+      transition: transform 0.18s ease, box-shadow 0.18s ease, border 0.18s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-3px);
+      border-color: rgba(240, 0, 129, 0.7);
+      box-shadow: 0 16px 32px rgba(0, 0, 0, 0.95);
+    }
+
+    .card-title {
+      font-size: 15px;
+      font-weight: 500;
+    }
+
+    .card-kicker {
+      font-size: 12px;
+      color: var(--muted);
+    }
+
+    .card-body {
+      font-size: 13px;
+      color: var(--muted);
+    }
+
+    .links-list {
+      list-style: none;
+      margin-top: 6px;
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+    }
+
+    .links-list li a {
+      font-size: 13px;
+      color: #eadeff;
+    }
+
+    .links-list li a:hover {
+      text-decoration: underline;
+    }
+
+    .note {
+      font-size: 12px;
+      color: var(--muted);
+      margin-top: 6px;
+    }
+
+    .grid-3 {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 16px;
+    }
+
+    @media (max-width: 900px) {
+      .grid-3 {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+    }
+
+    @media (max-width: 640px) {
+      .grid-3 {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .footer {
+      font-size: 12px;
+      color: var(--muted);
+      text-align: center;
+      margin-top: 28px;
+    }
+
+    @media (min-width: 1500px) {
+      .page {
+        max-width: 1400px;
+        transform: scale(1.25);
+        transform-origin: top center;
+      }
+
+      body {
+        padding-top: 60px;
+        padding-bottom: 80px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <!-- HEADER / NAV -->
+    <header>
+      <div class="brand">
+        <div class="brand-avatar">C</div>
+        <div class="brand-text">
+          <h1>CandyHub</h1>
+          <span>Candy Black Studios · dark, witchy creator energy</span>
+        </div>
+      </div>
+      <nav>
+        <a class="nav-link" href="index.html"><span>🏠</span>Home</a>
+        <a class="nav-link active" href="mods.html"><span>🧁</span>Mods &amp; CC</a>
+        <a class="nav-link" href="videos.html"><span>📺</span>Videos</a>
+        <a class="nav-link" href="about.html"><span>🖤</span>About</a>
+        <a class="nav-link" href="links.html"><span>🔗</span>Links</a>
+      </nav>
+    </header>
+
+    <!-- HERO -->
+    <section class="hero">
+      <div>
+        <div class="hero-kicker">
+          <span></span>
+          Sims 4 · Maxis match cluttercore · heavily modded, still cute
+        </div>
+        <h1 class="hero-title">
+          Sims 4 <span>Mods &amp; CC</span> Library
+        </h1>
+        <p class="hero-tagline">
+          My current loadout of <strong>gameplay mods</strong>, <strong>build/buy CC collections</strong> and more.  
+          Everything links back to the <strong>original creators</strong> – I’m just the goblin who organised the chaos.
+        </p>
+
+        <div class="hero-actions">
+          <a href="#" class="btn-primary">
+            <span>📂</span> Full list download (coming soon)
+          </a>
+          <a href="index.html" class="btn-ghost">
+            🏠 Back to CandyHub home
+          </a>
+        </div>
+
+        <p class="hero-note">
+          <strong>Reminder:</strong> Always read each creator’s install instructions &amp; compatibility notes.
+          Back up your saves before changing big mods.
+        </p>
+      </div>
+
+      <aside class="hero-right">
+        <div class="hero-right-title">
+          <div class="pill-soft">
+            <span>💗</span> Current Sims 4 setup
+          </div>
+          <span>Gameplay, tools, collections &amp; clutter</span>
+        </div>
+
+        <div class="meta-list">
+          <div>
+            <div class="meta-item-label">Categories here</div>
+            <div class="meta-item-value">Gameplay · Build/Buy · CAS (soon)</div>
+          </div>
+          <div>
+            <div class="meta-item-label">Style</div>
+            <div class="meta-item-value">Maxis match, witchy, cozy</div>
+          </div>
+          <div>
+            <div class="meta-item-label">Last updated</div>
+            <div class="meta-item-value">Manually curated list</div>
+          </div>
+          <div>
+            <div class="meta-item-label">Safe vibes</div>
+            <div class="meta-item-value">No reuploads, no paywall links</div>
+          </div>
+        </div>
+
+        <p class="hero-right-note">
+          If a link ever breaks or a creator moves platforms, I’ll update it here when I notice.
+          Always support creators directly where you can. 💖
+        </p>
+      </aside>
+    </section>
+
+    <!-- GAMEPLAY MODS -->
+    <section class="section">
+      <div class="section-header">
+        <h2 class="section-title"><span>🎮</span>Gameplay Mods</h2>
+        <p class="section-subtitle">
+          Core systems, UI tweaks and story helpers that make my game actually playable.
+        </p>
+      </div>
+
+      <div class="grid-3">
+        <!-- Weerbesu -->
+        <article class="card">
+          <div class="card-kicker">Weerbesu</div>
+          <div class="card-title">UI &amp; venue tweaks</div>
+          <p class="card-body">
+            Absolute staples for CAS, cheats and making lots feel alive when your Sims arrive.
+          </p>
+          <ul class="links-list">
+            <li>
+              <a href="https://www.patreon.com/posts/more-columns-in-27751117" target="_blank" rel="noopener">
+                More Columns in CAS
+              </a>
+            </li>
+            <li>
+              <a href="https://www.patreon.com/posts/ui-cheats-v1-51-26240068" target="_blank" rel="noopener">
+                UI Cheats Extension
+              </a>
+            </li>
+            <li>
+              <a href="https://www.patreon.com/posts/no-empty-venues-25331818" target="_blank" rel="noopener">
+                No Empty Venues When Arriving
+              </a>
+            </li>
+          </ul>
+        </article>
+
+        <!-- TwistedMexi -->
+        <article class="card">
+          <div class="card-kicker">TwistedMexi</div>
+          <div class="card-title">Build tools &amp; QoL</div>
+          <p class="card-body">
+            The backbone of my building workflow and in-game organisation.
+          </p>
+          <ul class="links-list">
+            <li>
+              <a href="https://www.patreon.com/posts/better-buildbuy-135871452" target="_blank" rel="noopener">
+                Better BuildBuy v4.3
+              </a>
+            </li>
+            <li>
+              <a href="https://www.patreon.com/posts/tool-v3-0-lot-144306626" target="_blank" rel="noopener">
+                TOOL v3.0
+              </a>
+            </li>
+            <li>
+              <a href="https://www.patreon.com/posts/all-scenarios-v3-127164163" target="_blank" rel="noopener">
+                All Scenarios v3.5
+              </a>
+            </li>
+            <li>
+              <a href="https://www.patreon.com/posts/smarter-pie-menu-83099506" target="_blank" rel="noopener">
+                Smarter Pie Menu
+              </a>
+            </li>
+            <li>
+              <a href="https://www.patreon.com/posts/smarter-save-v1-103062139" target="_blank" rel="noopener">
+                Smarter Save Menu
+              </a>
+            </li>
+            <li>
+              <a href="https://www.patreon.com/posts/better-inventory-105081198" target="_blank" rel="noopener">
+                Better Inventory v1.1
+              </a>
+            </li>
+            <li>
+              <a href="https://www.patreon.com/posts/searchable-sim-2-132272208" target="_blank" rel="noopener">
+                Searchable Sim Picker v1.2
+              </a>
+            </li>
+            <li>
+              <a href="https://www.patreon.com/posts/twistedmexis-v1-127156472" target="_blank" rel="noopener">
+                TwistedMexi's More Rentals v1.3
+              </a>
+            </li>
+          </ul>
+        </article>
+
+        <!-- LittleMsSam core -->
+        <article class="card">
+          <div class="card-kicker">LittleMsSam</div>
+          <div class="card-title">QoL &amp; world tweaks</div>
+          <p class="card-body">
+            Tiny fixes and systems that quietly make everything feel smoother and smarter.
+          </p>
+          <ul class="links-list">
+            <li>
+              <a href="https://www.curseforge.com/sims4/mods/collectibles-spawner" target="_blank" rel="noopener">
+                Collectibles Spawner
+              </a>
+            </li>
+            <li>
+              <a href="https://www.curseforge.com/sims4/mods/rsm-improved-auto-object-choosing" target="_blank" rel="noopener">
+                Improved Auto Object Choosing
+              </a>
+            </li>
+            <li>
+              <a href="https://www.curseforge.com/sims4/mods/unlock-lock-doors-for-chosen-sims" target="_blank" rel="noopener">
+                Unlock/Lock Doors for chosen Sims
+              </a>
+            </li>
+            <li>
+              <a href="https://www.curseforge.com/sims4/mods/rbf-gardening-workaround-fix" target="_blank" rel="noopener">
+                Gardening Workaround Fix
+              </a>
+            </li>
+            <li>
+              <a href="https://www.curseforge.com/sims4/mods/more-woodworks" target="_blank" rel="noopener">
+                More Woodworks
+              </a>
+            </li>
+            <li>
+              <a href="https://www.curseforge.com/sims4/mods/woodworking-table-rework" target="_blank" rel="noopener">
+                Woodworking Table Rework
+              </a>
+            </li>
+            <li>
+              <a href="https://www.curseforge.com/sims4/mods/romantic-massage" target="_blank" rel="noopener">
+                Romantic Massage
+              </a>
+            </li>
+            <li>
+              <a href="https://www.curseforge.com/sims4/mods/ultrasound-scan" target="_blank" rel="noopener">
+                Ultrasound Scan
+              </a>
+            </li>
+            <li>
+              <a href="https://www.curseforge.com/sims4/mods/first-love" target="_blank" rel="noopener">
+                First Love
+              </a>
+            </li>
+            <li>
+              <a href="https://www.curseforge.com/sims4/mods/rsm-photos-storable" target="_blank" rel="noopener">
+                Photos storable
+              </a>
+            </li>
+            <li>
+              <a href="https://www.curseforge.com/sims4/mods/sell-via-simbay" target="_blank" rel="noopener">
+                Sell via Simbay
+              </a>
+            </li>
+          </ul>
+          <p class="note">
+            Plus DLC-specific tweaks listed below.
+          </p>
+        </article>
+
+        <!-- LittleMsSam DLC -->
+        <article class="card">
+          <div class="card-kicker">LittleMsSam · DLC Mods</div>
+          <div class="card-title">Pack-specific fixes</div>
+          <p class="card-body">
+            Extra polish for specific packs to make them feel more playable.
+          </p>
+          <ul class="links-list">
+            <li>
+              <a href="https://www.curseforge.com/sims4/mods/better-familiars" target="_blank" rel="noopener">
+                Better Familiars (Realm of Magic)
+              </a>
+            </li>
+            <li>
+              <a href="https://www.curseforge.com/sims4/mods/choose-your-roommate" target="_blank" rel="noopener">
+                Choose Your Roommate (Discover University)
+              </a>
+            </li>
+            <li>
+              <a href="https://www.curseforge.com/sims4/mods/working-pet-water-bowls" target="_blank" rel="noopener">
+                Working Pet Water Bowls (Cats &amp; Dogs)
+              </a>
+            </li>
+            <li>
+              <a href="https://www.curseforge.com/sims4/mods/parenting-skill-for-teens-more" target="_blank" rel="noopener">
+                Parenting Skill for Teens (Parenthood GP)
+              </a>
+            </li>
+          </ul>
+        </article>
+
+        <!-- DeaderPool -->
+        <article class="card">
+          <div class="card-kicker">DeaderPool</div>
+          <div class="card-title">MC Command Center</div>
+          <p class="card-body">
+            The classic story progression, control &amp; tuning mod duo.
+          </p>
+          <ul class="links-list">
+            <li>
+              <a href="https://deaderpool-mccc.com/downloads.html" target="_blank" rel="noopener">
+                MC Command Center 2025.7.0
+              </a>
+            </li>
+            <li>
+              <a href="https://deaderpool-mccc.com/downloads.html" target="_blank" rel="noopener">
+                MC Woohoo 2025.7.0
+              </a>
+            </li>
+          </ul>
+        </article>
+
+        <!-- ScumbumboCF -->
+        <article class="card">
+          <div class="card-kicker">ScumbumboCF</div>
+          <div class="card-title">Mod framework &amp; art filters</div>
+          <p class="card-body">
+            Core support mod plus a neat little tweak for reference paintings.
+          </p>
+          <ul class="links-list">
+            <li>
+              <a href="https://www.curseforge.com/sims4/mods/xml-injector" target="_blank" rel="noopener">
+                XML Injector
+              </a>
+            </li>
+            <li>
+              <a href="https://www.curseforge.com/sims4/mods/set-filters-on-paintings-by-reference" target="_blank" rel="noopener">
+                Set Filters on Paintings by Reference
+              </a>
+            </li>
+          </ul>
+        </article>
+
+        <!-- Carl's Guides -->
+        <article class="card">
+          <div class="card-kicker">Carl's Guides</div>
+          <div class="card-title">Gardening helper</div>
+          <p class="card-body">
+            Because sometimes you just want your plants to behave.
+          </p>
+          <ul class="links-list">
+            <li>
+              <a href="https://www.patreon.com/posts/fertilize-evolve-60418758" target="_blank" rel="noopener">
+                Fertilize &amp; Evolve All Mod v1.02
+              </a>
+            </li>
+          </ul>
+        </article>
+      </div>
+    </section>
+
+    <!-- BUILD/BUY CC – HEYBRINE -->
+    <section class="section">
+      <div class="section-header">
+        <h2 class="section-title"><span>🏡</span>Build/Buy CC – HeyBrine Collections</h2>
+        <p class="section-subtitle">
+          The sets that give my builds their cozy, cluttered, cottagecore-meets-modern vibe.
+        </p>
+      </div>
+
+      <div class="grid-3">
+        <!-- Nana's -->
+        <article class="card">
+          <div class="card-kicker">HeyBrine</div>
+          <div class="card-title">The Nana's Collection</div>
+          <p class="card-body">
+            Soft, nostalgic cozy-core pieces – think grandma’s house but make it cute.
+          </p>
+          <ul class="links-list">
+            <li>
+              <a href="https://www.curseforge.com/sims4/build-buy/the-nanas-collection-part-i" target="_blank" rel="noopener">
+                The Nana's Collection – Part I
+              </a>
+            </li>
+            <li>
+              <a href="https://www.curseforge.com/sims4/build-buy/the-nanas-collection-part-ii" target="_blank" rel="noopener">
+                The Nana's Collection – Part II
+              </a>
+            </li>
+          </ul>
+        </article>
+
+        <!-- Indonis -->
+        <article class="card">
+          <div class="card-kicker">HeyBrine</div>
+          <div class="card-title">Indonis Collection</div>
+          <p class="card-body">
+            Bathroom, main set and kitchen pieces that lean into modern-but-cozy.
+          </p>
+          <ul class="links-list">
+            <li>
+              <a href="https://www.curseforge.com/sims4/build-buy/indonis-bathroom-pack" target="_blank" rel="noopener">
+                Indonis Bathroom Pack
+              </a>
+            </li>
+            <li>
+              <a href="https://www.curseforge.com/sims4/build-buy/indonis-pack" target="_blank" rel="noopener">
+                Indonis Pack
+              </a>
+            </li>
+            <li>
+              <a href="https://www.curseforge.com/sims4/build-buy/indonis-kitchen-pack" target="_blank" rel="noopener">
+                Indonis Kitchen Pack
+              </a>
+            </li>
+          </ul>
+        </article>
+
+        <!-- Oaty -->
+        <article class="card">
+          <div class="card-kicker">HeyBrine</div>
+          <div class="card-title">Oaty &amp; Entree / Lux Contempo</div>
+          <p class="card-body">
+            Neutral, warm-toned sets perfect for soft, lived-in family homes.
+          </p>
+          <ul class="links-list">
+            <li>
+              <a href="https://www.curseforge.com/sims4/build-buy/oaty-collection" target="_blank" rel="noopener">
+                Oaty Collection
+              </a>
+            </li>
+            <li>
+              <a href="https://www.curseforge.com/sims4/build-buy/the-entree-pack" target="_blank" rel="noopener">
+                The Entree Pack
+              </a>
+            </li>
+            <li>
+              <a href="https://www.curseforge.com/sims4/build-buy/lux-contempo-pack" target="_blank" rel="noopener">
+                Lux Contempo Pack
+              </a>
+            </li>
+          </ul>
+        </article>
+
+        <!-- Noova & Fairy -->
+        <article class="card">
+          <div class="card-kicker">HeyBrine</div>
+          <div class="card-title">Noova &amp; Fairy Collections</div>
+          <p class="card-body">
+            Soft, dreamlike sets that slide perfectly into my fairy / witchy saves.
+          </p>
+          <ul class="links-list">
+            <li>
+              <a href="https://www.curseforge.com/sims4/build-buy/noova-collection" target="_blank" rel="noopener">
+                Noova Collection
+              </a>
+            </li>
+            <li>
+              <a href="https://www.curseforge.com/sims4/create-a-sim/the-fairy-collection" target="_blank" rel="noopener">
+                The Fairy Collection (CAS)
+              </a>
+            </li>
+          </ul>
+        </article>
+
+        <!-- Vanlife & Outdoorsy -->
+        <article class="card">
+          <div class="card-kicker">HeyBrine</div>
+          <div class="card-title">Vanlife &amp; Outdoorsy</div>
+          <p class="card-body">
+            Perfect for campers, tiny homes and outdoor builds.
+          </p>
+          <ul class="links-list">
+            <li>
+              <a href="https://www.curseforge.com/sims4/build-buy/vanlife-ways-part-1" target="_blank" rel="noopener">
+                Vanlife Ways – Part I
+              </a>
+            </li>
+            <li>
+              <a href="https://www.curseforge.com/sims4/build-buy/vanlife-ways-part-ii" target="_blank" rel="noopener">
+                Vanlife Ways – Part II (Discover University)
+              </a>
+            </li>
+            <li>
+              <a href="https://www.curseforge.com/sims4/build-buy/outdoorsy-collection" target="_blank" rel="noopener">
+                Outdoorsy Collection
+              </a>
+            </li>
+          </ul>
+        </article>
+
+        <!-- Teenage & Jessie Livin -->
+        <article class="card">
+          <div class="card-kicker">HeyBrine</div>
+          <div class="card-title">Teenage Dream &amp; Jessie Livin'</div>
+          <p class="card-body">
+            Teen rooms, apartments and “just moved in but cute about it” spaces.
+          </p>
+          <ul class="links-list">
+            <li>
+              <a href="https://www.curseforge.com/sims4/build-buy/teenage-dream-pack" target="_blank" rel="noopener">
+                Teenage Dream Pack
+              </a>
+            </li>
+            <li>
+              <a href="https://www.curseforge.com/sims4/build-buy/jessie-livin-pack-part-i" target="_blank" rel="noopener">
+                Jessie Livin' Collection – Part I
+              </a>
+            </li>
+            <li>
+              <a href="https://www.curseforge.com/sims4/build-buy/jessie-livin-pack-part-ii" target="_blank" rel="noopener">
+                Jessie Livin' Collection – Part II
+              </a>
+            </li>
+          </ul>
+        </article>
+
+        <!-- Simstmas -->
+        <article class="card">
+          <div class="card-kicker">HeyBrine</div>
+          <div class="card-title">Simstmas Collections</div>
+          <p class="card-body">
+            Seasonal cozy chaos – winter builds, festive clutter and holiday vibes.
+          </p>
+          <ul class="links-list">
+            <li>
+              <a href="https://www.curseforge.com/sims4/build-buy/crystal-simstmas-kit" target="_blank" rel="noopener">
+                Crystal Simstmas Kit
+              </a>
+            </li>
+            <li>
+              <a href="https://www.curseforge.com/sims4/build-buy/cozy-simstmas-pack" target="_blank" rel="noopener">
+                Cozy Simstmas Pack
+              </a>
+            </li>
+          </ul>
+        </article>
+
+        <!-- Bohemian Dream -->
+        <article class="card">
+          <div class="card-kicker">HeyBrine</div>
+          <div class="card-title">Bohemian Dream Collection</div>
+          <p class="card-body">
+            Boho, colourful and a little bit feral – in the best way.
+          </p>
+          <ul class="links-list">
+            <li>
+              <a href="https://www.curseforge.com/sims4/build-buy/bohemian-dream-collection" target="_blank" rel="noopener">
+                Bohemian Dream Collection
+              </a>
+            </li>
+            <li>
+              <a href="https://www.curseforge.com/sims4/build-buy/bohemian-dream-collection-part-ii" target="_blank" rel="noopener">
+                Bohemian Dream Collection – Part II
+              </a>
+            </li>
+          </ul>
+        </article>
+
+        <!-- Carved in Stone & Cozy Nook -->
+        <article class="card">
+          <div class="card-kicker">HeyBrine</div>
+          <div class="card-title">Carved in Stone &amp; Cozy Nook</div>
+          <p class="card-body">
+            Statement pieces for cozy corners and dramatic exteriors.
+          </p>
+          <ul class="links-list">
+            <li>
+              <a href="https://www.curseforge.com/sims4/build-buy/carved-in-stone-pack" target="_blank" rel="noopener">
+                Carved in Stone Pack
+              </a>
+            </li>
+            <li>
+              <a href="https://www.curseforge.com/sims4/build-buy/cozy-nook-collection" target="_blank" rel="noopener">
+                Cozy Nook Collection
+              </a>
+            </li>
+          </ul>
+        </article>
+
+        <!-- Cottage Diaries & Crystal/Curv -->
+        <article class="card">
+          <div class="card-kicker">HeyBrine</div>
+          <div class="card-title">Cottage Diaries &amp; Crystal / Curv Packs</div>
+          <p class="card-body">
+            Peak cottagecore: diaries, estate sale finds, crystals and dreamy curved furniture.
+          </p>
+          <ul class="links-list">
+            <li>
+              <a href="https://www.curseforge.com/sims4/build-buy/cottage-diaries-part-i" target="_blank" rel="noopener">
+                Cottage Diaries Part I
+              </a>
+            </li>
+            <li>
+              <a href="https://www.curseforge.com/sims4/build-buy/cottage-diaries-part-ii-kitchen" target="_blank" rel="noopener">
+                Cottage Diaries Part II – Kitchen
+              </a>
+            </li>
+            <li>
+              <a href="https://www.curseforge.com/sims4/build-buy/cottage-diaries-part-iii-living-room" target="_blank" rel="noopener">
+                Cottage Diaries Part III – Living Room
+              </a>
+            </li>
+            <li>
+              <a href="https://www.curseforge.com/sims4/build-buy/cottage-diaries-part-iv-estate-sale-finds" target="_blank" rel="noopener">
+                Cottage Diaries Part IV – Estate Sale Finds
+              </a>
+            </li>
+            <li>
+              <a href="https://www.curseforge.com/sims4/build-buy/cottage-diaries-part-v-bedroom" target="_blank" rel="noopener">
+                Cottage Diaries Part V – Bedroom
+              </a>
+            </li>
+            <li>
+              <a href="https://www.curseforge.com/sims4/build-buy/crystal-clutters-pack" target="_blank" rel="noopener">
+                Crystal Clutters Pack
+              </a>
+            </li>
+            <li>
+              <a href="https://www.curseforge.com/sims4/build-buy/curv-dreams-pack" target="_blank" rel="noopener">
+                Curv Dreams Pack
+              </a>
+            </li>
+          </ul>
+        </article>
+      </div>
+    </section>
+
+    <!-- CAS CC – COMING SOON -->
+    <section class="section">
+      <div class="section-header">
+        <h2 class="section-title"><span>💋</span>CAS CC Mods</h2>
+        <p class="section-subtitle">
+          Sliders, presets, skins, eyes, hairs and outfits – all the pretty things. Coming soon.
+        </p>
+      </div>
+
+      <div class="card">
+        <div class="card-title">CAS section is in progress</div>
+        <div class="card-body">
+          I’m still sorting through my CAS folder and organising everything into:
+          <br /><br />
+          • Sliders &amp; body/face presets<br />
+          • Skins, overlays &amp; details<br />
+          • Eyes, brows &amp; lashes<br />
+          • Hair &amp; accessories<br />
+          • Everyday outfits, occult fits and special looks<br /><br />
+          Once it’s wrangled, you’ll find all the links here with notes like
+          <em>“main default eyes”</em>, <em>“legacy save skinblend”</em> and
+          <em>“witchy queen hair I overuse in every save”</em>.
+        </div>
+      </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+      CandyHub · Candy Black Studios · Sims 4 Mods &amp; CC Library.  
+      <br />
+      Mods &amp; CC always credited to original creators · Please support them directly where you can.
+    </footer>
+  </div>
+</body>
+</html>
