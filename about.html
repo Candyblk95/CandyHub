@@ -1,0 +1,780 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>CandyHub – Who is Candy Black?</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta
+    name="description"
+    content="Who is Candy Black – dark, witchy, pink-coded multi-game creator behind CandyHub."
+  />
+
+  <!-- Google Font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+    rel="stylesheet"
+  />
+
+  <style>
+    :root {
+      --bg: #050309;
+      --bg-alt: #0b0613;
+      --card: #120c1f;
+      --accent: #F00081;
+      --accent-soft: rgba(240, 0, 129, 0.15);
+      --text: #f8f5ff;
+      --muted: #a59ac3;
+      --border: #2a1f3b;
+      --radius-lg: 18px;
+      --radius-xl: 26px;
+      --shadow-soft: 0 18px 50px rgba(0, 0, 0, 0.8);
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: "Poppins", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background:
+        radial-gradient(circle at top left, #2b1641 0, transparent 55%),
+        radial-gradient(circle at top right, #2b1641 0, transparent 55%),
+        #050309;
+      background-repeat: no-repeat;
+      color: var(--text);
+      min-height: 100vh;
+      padding: 40px 32px 60px;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .page {
+      max-width: 1400px;
+      margin: 0 auto;
+    }
+
+    /* NAV */
+    header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      margin-bottom: 30px;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .brand-avatar {
+      width: 48px;
+      height: 48px;
+      border-radius: 999px;
+      background:
+        radial-gradient(circle at top, #ff7bd5 0, #F00081 40%, #2b1641 100%);
+      box-shadow: 0 0 28px rgba(240, 0, 129, 0.7);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 700;
+      font-size: 24px;
+    }
+
+    .brand-text h1 {
+      font-size: 22px;
+      font-weight: 600;
+      letter-spacing: 0.04em;
+    }
+
+    .brand-text span {
+      font-size: 12px;
+      color: var(--muted);
+    }
+
+    nav {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+
+    .nav-link {
+      font-size: 14px;
+      padding: 7px 13px;
+      border-radius: 999px;
+      border: 1px solid transparent;
+      background: transparent;
+      color: var(--muted);
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      cursor: pointer;
+      transition: all 0.18s ease;
+    }
+
+    .nav-link span {
+      font-size: 16px;
+    }
+
+    .nav-link:hover {
+      color: var(--text);
+      border-color: rgba(240, 0, 129, 0.4);
+      background: rgba(10, 5, 18, 0.9);
+    }
+
+    .nav-link.active {
+      color: var(--text);
+      border-color: rgba(240, 0, 129, 0.9);
+      background: var(--accent-soft);
+      box-shadow: 0 0 0 1px rgba(240, 0, 129, 0.4);
+    }
+
+    @media (max-width: 720px) {
+      header {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+      nav {
+        width: 100%;
+      }
+    }
+
+    /* HERO / ABOUT HEADER */
+    .hero {
+      border-radius: var(--radius-xl);
+      border: 1px solid rgba(240, 0, 129, 0.35);
+      background:
+        radial-gradient(circle at top left, rgba(240, 0, 129, 0.2), transparent 52%),
+        radial-gradient(circle at bottom right, rgba(93, 63, 211, 0.3), transparent 60%),
+        rgba(5, 3, 12, 0.94);
+      box-shadow: var(--shadow-soft);
+      padding: 26px 24px 22px;
+      display: grid;
+      grid-template-columns: minmax(0, 3fr) minmax(0, 2.1fr);
+      gap: 22px;
+      margin-bottom: 28px;
+    }
+
+    @media (max-width: 840px) {
+      .hero {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .hero-kicker {
+      font-size: 12px;
+      color: var(--muted);
+      margin-bottom: 8px;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 4px 11px;
+      border-radius: 999px;
+      border: 1px solid rgba(240, 0, 129, 0.45);
+      background: rgba(8, 3, 18, 0.85);
+    }
+
+    .hero-kicker span {
+      font-size: 8px;
+      width: 8px;
+      height: 8px;
+      border-radius: 999px;
+      background: #42ffb7;
+      box-shadow: 0 0 11px rgba(66, 255, 183, 0.9);
+    }
+
+    .hero-title {
+      font-size: 32px;
+      line-height: 1.18;
+      font-weight: 600;
+      margin-bottom: 10px;
+    }
+
+    .hero-title span {
+      color: var(--accent);
+    }
+
+    .hero-tagline {
+      font-size: 14px;
+      color: var(--muted);
+      margin-bottom: 14px;
+    }
+
+    .hero-tagline strong {
+      color: #ffffff;
+      font-weight: 500;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-bottom: 12px;
+    }
+
+    .btn-primary {
+      border-radius: 999px;
+      padding: 8px 16px;
+      border: none;
+      background: linear-gradient(135deg, #ff7bd5, var(--accent));
+      color: #050309;
+      font-size: 14px;
+      font-weight: 600;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      cursor: pointer;
+      box-shadow: 0 0 22px rgba(240, 0, 129, 0.8);
+      text-decoration: none;
+      white-space: nowrap;
+    }
+
+    .btn-primary span {
+      font-size: 18px;
+    }
+
+    .btn-ghost {
+      border-radius: 999px;
+      padding: 7px 14px;
+      font-size: 13px;
+      border: 1px solid rgba(240, 0, 129, 0.6);
+      background: rgba(6, 3, 12, 0.7);
+      color: var(--text);
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      cursor: pointer;
+      text-decoration: none;
+    }
+
+    .hero-note {
+      font-size: 13px;
+      color: var(--muted);
+    }
+
+    .hero-note strong {
+      color: #fff;
+      font-weight: 500;
+    }
+
+    .hero-right {
+      border-radius: var(--radius-lg);
+      background:
+        radial-gradient(circle at top, rgba(240, 0, 129, 0.16), transparent 55%),
+        rgba(7, 4, 16, 0.96);
+      border: 1px solid rgba(240, 0, 129, 0.35);
+      padding: 16px 15px 14px;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .hero-right-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 8px;
+      font-size: 13px;
+    }
+
+    .pill-soft {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 4px 10px;
+      border-radius: 999px;
+      border: 1px solid rgba(255, 255, 255, 0.06);
+      background: rgba(9, 5, 18, 0.95);
+      font-size: 12px;
+      color: var(--muted);
+    }
+
+    .pill-soft span {
+      font-size: 16px;
+    }
+
+    .hero-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      font-size: 11px;
+    }
+
+    .tag-pill {
+      padding: 3px 8px;
+      border-radius: 999px;
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      background: rgba(8, 4, 18, 0.9);
+      color: var(--muted);
+    }
+
+    .hero-right-note {
+      font-size: 12px;
+      color: var(--muted);
+    }
+
+    /* Sections */
+    .section {
+      margin-bottom: 28px;
+    }
+
+    .section-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      gap: 12px;
+      margin-bottom: 14px;
+    }
+
+    .section-title {
+      font-size: 19px;
+      font-weight: 600;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .section-title span {
+      font-size: 20px;
+    }
+
+    .section-subtitle {
+      font-size: 13px;
+      color: var(--muted);
+    }
+
+    .grid-2 {
+      display: grid;
+      grid-template-columns: minmax(0, 1.4fr) minmax(0, 1.6fr);
+      gap: 18px;
+    }
+
+    @media (max-width: 900px) {
+      .grid-2 {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .card {
+      border-radius: var(--radius-lg);
+      background: radial-gradient(circle at top, rgba(240, 0, 129, 0.12), transparent 55%), var(--card);
+      border: 1px solid rgba(22, 17, 35, 0.9);
+      box-shadow: 0 12px 26px rgba(0, 0, 0, 0.8);
+      padding: 13px 14px 12px;
+      font-size: 14px;
+      display: flex;
+      flex-direction: column;
+      gap: 7px;
+      transition: transform 0.18s ease, box-shadow 0.18s ease, border 0.18s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-3px);
+      border-color: rgba(240, 0, 129, 0.7);
+      box-shadow: 0 16px 32px rgba(0, 0, 0, 0.95);
+    }
+
+    .card-title {
+      font-size: 15px;
+      font-weight: 500;
+    }
+
+    .card-kicker {
+      font-size: 12px;
+      color: var(--muted);
+    }
+
+    .card-body {
+      font-size: 13px;
+      color: var(--muted);
+    }
+
+    .list {
+      margin-top: 4px;
+      font-size: 13px;
+      color: var(--muted);
+    }
+
+    .list li {
+      margin-left: 18px;
+      margin-bottom: 3px;
+    }
+
+    .pill-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      margin-top: 6px;
+      font-size: 11px;
+    }
+
+    .pill {
+      padding: 3px 9px;
+      border-radius: 999px;
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      background: rgba(8, 4, 18, 0.9);
+      color: var(--muted);
+    }
+
+    .social-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 8px;
+    }
+
+    .social-link {
+      font-size: 13px;
+      padding: 7px 12px;
+      border-radius: 999px;
+      border: 1px solid rgba(240, 0, 129, 0.6);
+      background: rgba(6, 3, 12, 0.8);
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      color: var(--text);
+      transition: background 0.18s ease, box-shadow 0.18s ease, transform 0.18s ease;
+    }
+
+    .social-link span {
+      font-size: 15px;
+    }
+
+    .social-link:hover {
+      background: rgba(240, 0, 129, 0.18);
+      box-shadow: 0 0 18px rgba(240, 0, 129, 0.6);
+      transform: translateY(-1px);
+    }
+
+    /* Timeline-ish layout */
+    .timeline {
+      display: grid;
+      grid-template-columns: minmax(0, 1.1fr) minmax(0, 1.9fr);
+      gap: 18px;
+    }
+
+    @media (max-width: 900px) {
+      .timeline {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .timeline-label {
+      font-size: 13px;
+      color: var(--muted);
+    }
+
+    .timeline-points {
+      font-size: 13px;
+      color: var(--muted);
+    }
+
+    .timeline-points p {
+      margin-bottom: 6px;
+    }
+
+    .footer {
+      font-size: 12px;
+      color: var(--muted);
+      text-align: center;
+      margin-top: 28px;
+    }
+
+    .footer a {
+      color: var(--accent);
+    }
+
+    .footer a:hover {
+      text-decoration: underline;
+    }
+
+    @media (min-width: 1500px) {
+      .page {
+        max-width: 1400px;
+        transform: scale(1.25);
+        transform-origin: top center;
+      }
+
+      body {
+        padding-top: 60px;
+        padding-bottom: 80px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <!-- HEADER / NAV -->
+    <header>
+      <div class="brand">
+        <div class="brand-avatar">C</div>
+        <div class="brand-text">
+          <h1>CandyHub</h1>
+          <span>Candy Black · dark, witchy creator energy</span>
+        </div>
+      </div>
+      <nav>
+        <a class="nav-link" href="index.html"><span>🏠</span>Home</a>
+        <a class="nav-link" href="mods.html"><span>🧁</span>Mods &amp; CC</a>
+        <a class="nav-link" href="videos.html"><span>📺</span>Videos</a>
+        <a class="nav-link active" href="about.html"><span>🖤</span>About</a>
+        <a class="nav-link" href="links.html"><span>🔗</span>Links</a>
+      </nav>
+    </header>
+
+    <!-- HERO -->
+    <section class="hero">
+      <div>
+        <div class="hero-kicker">
+          <span></span>
+          Who is Candy Black · creator, goblin, chaos organiser
+        </div>
+        <h1 class="hero-title">
+          Who is <span>Candy Black</span>?
+        </h1>
+        <p class="hero-tagline">
+          I’m a <strong>dark, witchy, pink-coded</strong> creator who lives in multiple games at once:
+          Sims 4, Animal Crossing, World of Warcraft, GTA RP &amp; AI music.  
+          I build worlds, hoard CC, write lore, and then actually <em>organise</em> it so other people can use it too.
+        </p>
+
+        <div class="hero-actions">
+          <a href="https://www.youtube.com/@CandyBlk95/videos" target="_blank" class="btn-primary">
+            <span>▶️</span> Watch my YouTube
+          </a>
+          <a href="mods.html" class="btn-ghost">
+            🧁 Explore my Mods &amp; CC library
+          </a>
+        </div>
+
+        <p class="hero-note">
+          <strong>Short version:</strong> I make cozy, cursed, over-the-top things –
+          then link everything so you can recreate the chaos in your own game.
+        </p>
+      </div>
+
+      <aside class="hero-right">
+        <div class="hero-right-header">
+          <div class="pill-soft">
+            <span>🌙</span> Dark fairycore · celestial witchcore
+          </div>
+          <span>maxis match, clutter, and a bit feral</span>
+        </div>
+
+        <div class="hero-tags">
+          <span class="tag-pill">🎮 multi-game creator</span>
+          <span class="tag-pill">🧁 CC &amp; mod hoarder</span>
+          <span class="tag-pill">🎧 AI music &amp; RP EPs</span>
+          <span class="tag-pill">📺 video chaos &amp; series</span>
+          <span class="tag-pill">🖤 pink + black brainrot</span>
+        </div>
+
+        <p class="hero-right-note">
+          CandyHub is my way of turning “what mod is that?” and “where did you get that CC?”
+          into a calm, sharable, pretty little hub instead of 400 DMs and a headache.
+        </p>
+      </aside>
+    </section>
+
+    <!-- WHO I AM / WHAT I DO -->
+    <section class="section">
+      <div class="section-header">
+        <h2 class="section-title"><span>🍬</span>The creator behind CandyHub</h2>
+        <p class="section-subtitle">
+          A lore goblin with spreadsheets and good lighting.
+        </p>
+      </div>
+
+      <div class="grid-2">
+        <article class="card">
+          <div class="card-kicker">Who I am</div>
+          <div class="card-title">Dark, witchy, extra – on purpose</div>
+          <p class="card-body">
+            I’m Candy – a cozy chaos gremlin who loves:
+          </p>
+          <ul class="list">
+            <li>Turning <strong>games into universes</strong> with lore, households, businesses &amp; long-running saves.</li>
+            <li>Making everything <strong>pretty, moody and pink-coded</strong> without losing the Maxis match charm.</li>
+            <li>Over-modifying things, then actually documenting what I used.</li>
+            <li>Soundtracking RP and stories with <strong>AI-generated EPs</strong> you can loop for vibes.</li>
+          </ul>
+          <p class="card-body">
+            I like my worlds witchy, my layouts organised, and my CC folders…  
+            well, they’re a work in progress, but at least I’m sharing the links now.
+          </p>
+        </article>
+
+        <article class="card">
+          <div class="card-kicker">What I do</div>
+          <div class="card-title">Multi-game creator, one shared universe</div>
+          <p class="card-body">
+            Across everything I touch, I tend to:
+          </p>
+          <ul class="list">
+            <li>Build <strong>Sims 4</strong> households, saves, builds &amp; CC-heavy worlds.</li>
+            <li>Shape <strong>ACNH islands</strong> into gothic / celestial fairycore fever dreams.</li>
+            <li>Design <strong>WoW UIs</strong> and aesthetics (hi, Night Elf obsession).</li>
+            <li>Create <strong>GTA RP characters &amp; music</strong> to go with their story arcs.</li>
+          </ul>
+          <p class="card-body">
+            CandyHub is where all of that gets collected, cleaned up and turned into something
+            you can browse, binge, and steal ideas from.
+          </p>
+        </article>
+      </div>
+    </section>
+
+    <!-- CREATOR VIBES / AESTHETIC -->
+    <section class="section">
+      <div class="section-header">
+        <h2 class="section-title"><span>✨</span>Creator vibes &amp; aesthetics</h2>
+        <p class="section-subtitle">
+          If you like pink, black, clutter and a hint of menace, you’re in the right place.
+        </p>
+      </div>
+
+      <div class="grid-2">
+        <article class="card">
+          <div class="card-kicker">Visual vibes</div>
+          <div class="card-title">Cozy, celestial, a little unhinged</div>
+          <p class="card-body">
+            My style lives somewhere between:
+          </p>
+          <ul class="list">
+            <li><strong>Maxis match</strong> but full of clutter and personality.</li>
+            <li><strong>Dark fairycore / celestial witchcore</strong> – moons, crystals, candles, chaos.</li>
+            <li><strong>Pink &amp; black everything</strong> – UI, overlays, logos, the whole brand.</li>
+          </ul>
+          <div class="pill-row">
+            <span class="pill">🌙 celestial witchcore</span>
+            <span class="pill">🕯️ candlelit clutter</span>
+            <span class="pill">🖤 black &amp; hot pink</span>
+            <span class="pill">📸 moody screenshots</span>
+          </div>
+        </article>
+
+        <article class="card">
+          <div class="card-kicker">Content energy</div>
+          <div class="card-title">Soft chaos, organised</div>
+          <p class="card-body">
+            Expect:
+          </p>
+          <ul class="list">
+            <li><strong>Long-term saves &amp; lore</strong> instead of one-off chaos.</li>
+            <li><strong>Modded but curated</strong> – everything still feels playable, not just pretty.</li>
+            <li><strong>AI music</strong> that sounds like it crawled out of an RP montage.</li>
+            <li><strong>Planned series</strong> with playlists, not just random uploads.</li>
+          </ul>
+          <p class="card-body">
+            Basically: I break things on purpose, then make them look good and write the wiki for it.
+          </p>
+        </article>
+      </div>
+    </section>
+
+    <!-- GAMES & PROJECTS OVERVIEW -->
+    <section class="section">
+      <div class="section-header">
+        <h2 class="section-title"><span>🎮</span>Where I’m creating right now</h2>
+        <p class="section-subtitle">
+          Same Candy energy, different worlds.
+        </p>
+      </div>
+
+      <div class="grid-2">
+        <article class="card">
+          <div class="card-kicker">Games</div>
+          <div class="card-title">Active worlds</div>
+          <p class="card-body">
+            I’m currently pouring energy into:
+          </p>
+          <ul class="list">
+            <li><strong>Sims 4</strong> – builds, CC setups, gameplay series &amp; households.</li>
+            <li><strong>Animal Crossing</strong> – gothic, celestial, fairycore island layouts.</li>
+            <li><strong>World of Warcraft</strong> – Night Elf themed UI, weak auras &amp; vibes.</li>
+            <li><strong>GTA RP</strong> – characters, outfits, lore and custom AI music for arcs.</li>
+          </ul>
+          <div class="pill-row">
+            <span class="pill">🏡 cozy builds</span>
+            <span class="pill">🦋 fairycore islands</span>
+            <span class="pill">🌌 Night Elf UI</span>
+            <span class="pill">🚗 RP drama</span>
+          </div>
+        </article>
+
+        <article class="card">
+          <div class="card-kicker">Projects</div>
+          <div class="card-title">What CandyHub is for</div>
+          <p class="card-body">
+            This site is meant to be:
+          </p>
+          <ul class="list">
+            <li>A <strong>CC &amp; mods library</strong> for my Sims 4 setups.</li>
+            <li>A hub for <strong>GTA RP EPs</strong> and future music projects.</li>
+            <li>A clean way to link <strong>series, playlists &amp; resources</strong> from my videos.</li>
+            <li>A place for you to <strong>steal inspiration</strong> without hunting through comments.</li>
+          </ul>
+          <p class="card-body">
+            If you’ve ever paused a video to zoom in on a clutter item, this hub is literally for you.
+          </p>
+        </article>
+      </div>
+    </section>
+
+    <!-- SOCIALS & CONTACT -->
+    <section class="section">
+      <div class="section-header">
+        <h2 class="section-title"><span>🔗</span>Where to find me</h2>
+        <p class="section-subtitle">
+          Stalking, but make it consensual and algorithm-friendly.
+        </p>
+      </div>
+
+      <article class="card">
+        <div class="card-kicker">Socials &amp; platforms</div>
+        <div class="card-title">Come hang out in the Candyverse</div>
+        <p class="card-body">
+          These are the main places I’ll be sharing builds, videos, music and general chaos.
+          Some might be quiet while I’m building things in the background, but they’re all part of the plan.
+        </p>
+
+        <div class="social-row">
+          <a class="social-link" href="https://www.youtube.com/@CandyBlk95/videos" target="_blank" rel="noopener">
+            <span>▶️</span> YouTube – CandyBlk95
+          </a>
+          <a class="social-link" href="#" target="_blank" rel="noopener">
+            <span>🎮</span> Twitch (coming soon)
+          </a>
+          <a class="social-link" href="#" target="_blank" rel="noopener">
+            <span>📸</span> Instagram (optional)
+          </a>
+          <a class="social-link" href="#" target="_blank" rel="noopener">
+            <span>💬</span> Discord (if/when public)
+          </a>
+        </div>
+
+        <p class="card-body" style="margin-top: 10px;">
+          If you’re using my setups, playlists or music in your own gameplay, RP or streams:
+          feel free to tag me, link the site, or just quietly enjoy. I see you either way. 😈
+        </p>
+      </article>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+      CandyHub · Who is Candy Black?  
+      <br />
+      Dark, witchy creator energy · Come for the mods, stay for the vibes.
+    </footer>
+  </div>
+</body>
+</html>
