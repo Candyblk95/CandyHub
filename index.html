@@ -42,7 +42,9 @@
       font-family: "Poppins", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
       background:
         radial-gradient(circle at top left, #2b1641 0, transparent 55%),
-        radial-gradient(circle at bottom right, #120c1f 0, #050309 60%);
+        radial-gradient(circle at bottom right, #120c1f 0, transparent 60%),
+        #050309;
+      background-repeat: no-repeat;
       color: var(--text);
       min-height: 100vh;
       padding: 40px 32px 60px;
@@ -88,13 +90,13 @@
     }
 
     .brand-text h1 {
-      font-size: 22px;
+      font-size: 24px;
       font-weight: 600;
       letter-spacing: 0.04em;
     }
 
     .brand-text span {
-      font-size: 12px;
+      font-size: 13px;
       color: var(--muted);
     }
 
@@ -106,8 +108,8 @@
     }
 
     .nav-link {
-      font-size: 14px;
-      padding: 7px 13px;
+      font-size: 15px;
+      padding: 8px 14px;
       border-radius: 999px;
       border: 1px solid transparent;
       background: transparent;
@@ -120,7 +122,7 @@
     }
 
     .nav-link span {
-      font-size: 16px;
+      font-size: 18px;
     }
 
     .nav-link:hover {
@@ -155,11 +157,11 @@
         radial-gradient(circle at bottom right, rgba(93, 63, 211, 0.3), transparent 60%),
         rgba(5, 3, 12, 0.92);
       box-shadow: var(--shadow-soft);
-      padding: 28px 26px 24px;
+      padding: 30px 28px 26px;
       display: grid;
       grid-template-columns: minmax(0, 3fr) minmax(0, 2.1fr);
-      gap: 24px;
-      margin-bottom: 30px;
+      gap: 26px;
+      margin-bottom: 32px;
       position: relative;
       overflow: hidden;
     }
@@ -171,9 +173,9 @@
     }
 
     .hero-kicker {
-      font-size: 12px;
+      font-size: 13px;
       color: var(--muted);
-      margin-bottom: 8px;
+      margin-bottom: 10px;
       display: inline-flex;
       align-items: center;
       gap: 8px;
@@ -193,10 +195,10 @@
     }
 
     .hero-title {
-      font-size: 38px;
-      line-height: 1.1;
+      font-size: 48px;
+      line-height: 1.05;
       font-weight: 600;
-      margin-bottom: 12px;
+      margin-bottom: 14px;
     }
 
     .hero-title span {
@@ -204,9 +206,9 @@
     }
 
     .hero-tagline {
-      font-size: 15px;
+      font-size: 17px;
       color: var(--muted);
-      margin-bottom: 16px;
+      margin-bottom: 18px;
     }
 
     .hero-tagline strong {
@@ -217,17 +219,17 @@
     .hero-actions {
       display: flex;
       flex-wrap: wrap;
-      gap: 12px;
-      margin-bottom: 16px;
+      gap: 14px;
+      margin-bottom: 18px;
     }
 
     .btn-primary {
       border-radius: 999px;
-      padding: 9px 18px;
+      padding: 10px 20px;
       border: none;
       background: linear-gradient(135deg, #ff7bd5, var(--accent));
       color: #050309;
-      font-size: 14px;
+      font-size: 15px;
       font-weight: 600;
       display: inline-flex;
       align-items: center;
@@ -240,7 +242,7 @@
     }
 
     .btn-primary span {
-      font-size: 18px;
+      font-size: 20px;
     }
 
     .btn-primary:hover {
@@ -251,8 +253,8 @@
 
     .btn-ghost {
       border-radius: 999px;
-      padding: 8px 16px;
-      font-size: 14px;
+      padding: 9px 18px;
+      font-size: 15px;
       border: 1px solid rgba(240, 0, 129, 0.6);
       background: rgba(6, 3, 12, 0.7);
       color: var(--text);
@@ -272,7 +274,7 @@
     }
 
     .hero-note {
-      font-size: 13px;
+      font-size: 15px;
       color: var(--muted);
     }
 
@@ -286,22 +288,22 @@
       border-radius: var(--radius-lg);
       background: radial-gradient(circle at top, rgba(240, 0, 129, 0.2), transparent 50%), rgba(7, 4, 16, 0.96);
       border: 1px solid rgba(240, 0, 129, 0.35);
-      padding: 16px 16px 14px;
+      padding: 18px 18px 16px;
       position: relative;
       overflow: hidden;
     }
 
     .hero-right-title {
-      font-size: 14px;
+      font-size: 15px;
       display: flex;
       justify-content: space-between;
       align-items: center;
       gap: 8px;
-      margin-bottom: 12px;
+      margin-bottom: 14px;
     }
 
     .hero-right-title span {
-      font-size: 12px;
+      font-size: 13px;
       color: var(--muted);
     }
 
@@ -309,58 +311,58 @@
       display: inline-flex;
       align-items: center;
       gap: 6px;
-      padding: 4px 10px;
+      padding: 5px 11px;
       border-radius: 999px;
       border: 1px solid rgba(255, 255, 255, 0.06);
       background: rgba(9, 5, 18, 0.95);
-      font-size: 12px;
+      font-size: 13px;
       color: var(--muted);
     }
 
     .pill-soft span {
-      font-size: 16px;
+      font-size: 18px;
     }
 
     .stats {
       display: grid;
       grid-template-columns: repeat(3, minmax(0, 1fr));
       gap: 10px;
-      margin: 12px 0;
-      font-size: 12px;
+      margin: 14px 0;
+      font-size: 13px;
     }
 
     .stat-card {
       border-radius: 14px;
       background: rgba(12, 7, 25, 0.95);
       border: 1px solid rgba(0, 0, 0, 0.6);
-      padding: 9px 10px;
+      padding: 10px 11px;
     }
 
     .stat-label {
       color: var(--muted);
-      font-size: 11px;
+      font-size: 13px;
       margin-bottom: 3px;
     }
 
     .stat-value {
-      font-size: 15px;
+      font-size: 18px;
       font-weight: 600;
     }
 
     .stat-tag {
-      font-size: 11px;
+      font-size: 13px;
       color: #c7ffe9;
       margin-top: 3px;
     }
 
     .hero-right-footer {
-      font-size: 12px;
+      font-size: 13px;
       color: var(--muted);
       display: flex;
       justify-content: space-between;
       align-items: center;
       gap: 8px;
-      margin-top: 8px;
+      margin-top: 10px;
     }
 
     .hero-right-footer strong {
@@ -370,7 +372,7 @@
 
     /* Sections */
     .section {
-      margin-bottom: 30px;
+      margin-bottom: 32px;
     }
 
     .section-header {
@@ -378,11 +380,11 @@
       justify-content: space-between;
       align-items: baseline;
       gap: 12px;
-      margin-bottom: 14px;
+      margin-bottom: 16px;
     }
 
     .section-title {
-      font-size: 20px;
+      font-size: 22px;
       font-weight: 600;
       display: inline-flex;
       align-items: center;
@@ -390,18 +392,18 @@
     }
 
     .section-title span {
-      font-size: 22px;
+      font-size: 24px;
     }
 
     .section-subtitle {
-      font-size: 13px;
+      font-size: 15px;
       color: var(--muted);
     }
 
     .grid-3 {
       display: grid;
       grid-template-columns: repeat(3, minmax(0, 1fr));
-      gap: 16px;
+      gap: 18px;
     }
 
     @media (max-width: 840px) {
@@ -421,11 +423,11 @@
       background: radial-gradient(circle at top, rgba(240, 0, 129, 0.12), transparent 55%), var(--card);
       border: 1px solid rgba(22, 17, 35, 0.9);
       box-shadow: 0 12px 26px rgba(0, 0, 0, 0.8);
-      padding: 13px 14px 12px;
+      padding: 14px 15px 13px;
       font-size: 14px;
       display: flex;
       flex-direction: column;
-      gap: 7px;
+      gap: 8px;
       transition: transform 0.18s ease, box-shadow 0.18s ease, border 0.18s ease;
     }
 
@@ -436,23 +438,23 @@
     }
 
     .card-kicker {
-      font-size: 12px;
+      font-size: 14px;
       color: var(--muted);
     }
 
     .card-title {
-      font-size: 15px;
+      font-size: 18px;
       font-weight: 500;
     }
 
     .card-body {
-      font-size: 13px;
+      font-size: 15px;
       color: var(--muted);
       flex: 1;
     }
 
     .card-footer-link {
-      font-size: 13px;
+      font-size: 14px;
       color: #e7ddff;
       display: inline-flex;
       align-items: center;
@@ -468,14 +470,14 @@
       border-radius: 999px;
       border: 1px solid rgba(255, 255, 255, 0.08);
       background: rgba(8, 4, 18, 0.9);
-      font-size: 11px;
+      font-size: 13px;
       color: var(--muted);
     }
 
     .games-grid {
       display: grid;
       grid-template-columns: repeat(4, minmax(0, 1fr));
-      gap: 14px;
+      gap: 16px;
     }
 
     @media (max-width: 900px) {
@@ -494,11 +496,11 @@
       border-radius: 18px;
       border: 1px solid rgba(36, 18, 58, 0.85);
       background: radial-gradient(circle at top, rgba(240, 0, 129, 0.22), transparent 60%), #0c0615;
-      padding: 11px 12px 10px;
-      font-size: 13px;
+      padding: 12px 13px 11px;
+      font-size: 14px;
       display: flex;
       flex-direction: column;
-      gap: 5px;
+      gap: 6px;
       box-shadow: 0 12px 26px rgba(0, 0, 0, 0.9);
       transition: transform 0.18s ease, box-shadow 0.18s ease, border 0.18s ease;
     }
@@ -525,22 +527,22 @@
     }
 
     .game-name span {
-      font-size: 18px;
+      font-size: 20px;
     }
 
     .game-tag {
-      font-size: 11px;
+      font-size: 13px;
       color: #ffe7ff;
       opacity: 0.88;
     }
 
     .game-body {
-      font-size: 12px;
+      font-size: 14px;
       color: var(--muted);
     }
 
     .game-link {
-      font-size: 12px;
+      font-size: 14px;
       color: #eadeff;
       margin-top: 4px;
       display: inline-flex;
@@ -555,11 +557,11 @@
       background:
         linear-gradient(135deg, rgba(240, 0, 129, 0.16), transparent 55%),
         rgba(8, 4, 16, 0.96);
-      padding: 18px 18px 16px;
-      font-size: 14px;
+      padding: 20px 20px 18px;
+      font-size: 15px;
       display: grid;
       grid-template-columns: minmax(0, 2.4fr) minmax(0, 1.6fr);
-      gap: 16px;
+      gap: 18px;
       align-items: center;
     }
 
@@ -570,9 +572,9 @@
     }
 
     .about-title {
-      font-size: 18px;
+      font-size: 20px;
       font-weight: 600;
-      margin-bottom: 8px;
+      margin-bottom: 10px;
     }
 
     .about-highlight {
@@ -587,11 +589,14 @@
       justify-content: flex-end;
     }
 
+    /* Footer */
     .footer {
-      font-size: 12px;
+      font-size: 13px;
       color: var(--muted);
       text-align: center;
-      margin-top: 28px;
+      margin-top: 40px;
+      padding-top: 20px;
+      border-top: 1px solid rgba(240, 0, 129, 0.35);
     }
 
     .footer a {
@@ -602,11 +607,11 @@
       text-decoration: underline;
     }
 
-    /* 🔎 Scale up everything on big screens so it's actually readable on huge monitors */
+    /* Scale up everything on big screens so it's comfy on huge monitors */
     @media (min-width: 1500px) {
       .page {
         max-width: 1400px;
-        transform: scale(1.25); /* try 1.3 or 1.4 if you want her chunkier */
+        transform: scale(1.25);
         transform-origin: top center;
       }
 
@@ -650,8 +655,7 @@
         <p class="hero-tagline">
           Welcome to <strong>CandyHub</strong>, the home of Candy Black Studios —
           Sims builds, CC libraries, RP lore, cursed ideas, and cozy chaos all under one roof.
-          <br />
-          <br />
+          <br /><br />
           <strong>Come for the mods, stay for the vibes.</strong>
         </p>
 
@@ -717,7 +721,7 @@
           <div class="card-kicker">Sims &amp; sandbox games</div>
           <div class="card-title">Builds, CC &amp; gameplay setups</div>
           <p class="card-body">
-            Maxis match cluttercore, witchy builds, cozy households and modded saves.  
+            Maxis match cluttercore, witchy builds, cozy households and modded saves.
             If you've seen it in a video, it will live here with links, notes, and pack info.
           </p>
           <a href="mods.html" class="card-footer-link">
@@ -838,9 +842,9 @@
 
     <!-- FOOTER -->
     <footer class="footer">
-      CandyHub · Candy Black Studios · Come for the mods, stay for the vibes.  
+      CandyHub · Candy Black Studios · Come for the mods, stay for the vibes.
       <br />
-      Site powered by GitHub Pages · Mods &amp; CC always credited to original creators.
+      Site hosted via Netlify · Mods &amp; CC always credited to original creators.
     </footer>
   </div>
 </body>
